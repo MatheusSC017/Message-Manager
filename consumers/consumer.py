@@ -15,12 +15,12 @@ def whatsapp_callback(ch, method, properties, body):
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
 
-def consumer(queue):
+def consumer(name, queue, callback):
     connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
     channel = connection.channel()
 
     channel.queue_declare(queue=queue)
     channel.basic_consume(queue=queue, on_message_callback=callback)
-    print('WhatsApp Consumer waiting for messages. To exit press CTRL+C')
+    print(f'{name.title()} Consumer waiting for messages. To exit press CTRL+C')
     channel.start_consuming()
 

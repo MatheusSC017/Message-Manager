@@ -12,8 +12,8 @@ def send_message(message, queue_name):
 
 if __name__ == '__main__':
     print("Sending messages")
-    email_message = {"recipient": "example@example.com", "content": "Hello via Email!"}
+    email_message = {"recipient": "matheussimao2101@gmail.com", "content": "Hello via Email!"}
     whatsapp_message = {"recipient": "+55 19 99645-4087", "content": "Hello via WhatsApp!"}
 
-    # send_message(email_message, 'email_queue')
-    send_message(whatsapp_message, 'whatsapp_queue')
+    send_message(email_message, 'email_queue')
+    # send_message(whatsapp_message, 'whatsapp_queue')

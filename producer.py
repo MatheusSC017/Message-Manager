@@ -13,14 +13,33 @@ def send_message(message, queue_name):
 if __name__ == '__main__':
     print("Sending messages")
 
-    email_message = {
-        "recipient": "emaildeteste@gmail.com",
-        "client": "Matheus",
-        "date": "16/02/2024",
-        "vehicle": "Ford K, 2003",
-        "branch": "Parque Nacional da Tijuca, Alto da Boa Vista, Rio de Janeiro/RJ",
-        "subject": "appointment"}
-    whatsapp_message = {"recipient": "+55 11 5258-4584", "content": "Hello via WhatsApp!"}
+    # email_message = {
+    #     "recipient": "emaildeteste@gmail.com",
+    #     "client": "Matheus",
+    #     "date": "16/02/2024",
+    #     "vehicle": "Ford K, 2003",
+    #     "branch": "Parque Nacional da Tijuca, Alto da Boa Vista, Rio de Janeiro/RJ",
+    #     "subject": "appointment"}
+    # send_message(email_message, 'email_queue')
+    #
+    # email_message = {
+    #     "recipient": "emaildeteste@gmail.com",
+    #     "client": "Matheus",
+    #     "start_date": "21/01/2024",
+    #     "end_date": "04/02/2024",
+    #     "vehicle": "Ford K, 2003",
+    #     "branch": "Parque Nacional da Tijuca, Alto da Boa Vista, Rio de Janeiro/RJ",
+    #     "subject": "devolution"}
+    # send_message(email_message, 'email_queue')
+    #
+    # email_message = {
+    #     "recipient": "emaildeteste@gmail.com",
+    #     "client": "Matheus",
+    #     "start_date": "21/01/2024",
+    #     "end_date": "04/02/2024",
+    #     "vehicle": "Ford K, 2003",
+    #     "subject": "late devolution"}
+    # send_message(email_message, 'email_queue')
 
-    send_message(email_message, 'email_queue')
+    whatsapp_message = {"recipient": "+55 19 12545-4584", "content": "Hello via WhatsApp!"}
     send_message(whatsapp_message, 'whatsapp_queue')

@@ -15,9 +15,10 @@ def email_callback(ch, method, properties, body):
     logger = logging.getLogger(__name__)
 
     message = json.loads(body)
-    if message['subject'] in ['appointment', 'devolution', 'invoice', 'advertisement']:
+    if message['subject'] in ['appointment', 'devolution', 'late devolution', 'invoice']:
         send_email(**message)
         logger.info(message)
+        print("Message Sent!")
 
     ch.basic_ack(delivery_tag=method.delivery_tag)
 

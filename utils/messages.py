@@ -13,14 +13,14 @@ load_dotenv()
 template_env = Environment(loader=FileSystemLoader(searchpath="../templates"))
 
 
-def send_email(recipient, client, date, vehicle, branch, subject):
+def send_email(recipient, subject, **kwargs):
     context = ssl.create_default_context()
-    email_template = template_env.get_template("email/appointment.html")
-    email_content = email_template.render(subject=subject.title(), client=client, date=date, vehicle=vehicle, branch=branch)
+    email_template = template_env.get_template(f"email/{subject.replace(' ', '_')}.html")
+    email_content = email_template.render(subject=subject.title(), **kwargs)
 
     # Create the email message
     msg = MIMEText(email_content, 'html')
-    msg['Subject'] = f"{subject.title()} of {vehicle}"
+    msg['Subject'] = subject.title()
     msg['From'] = os.getenv("EMAIL")
     msg['To'] = recipient
 

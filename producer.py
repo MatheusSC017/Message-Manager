@@ -13,42 +13,59 @@ def send_message(message, queue_name):
 if __name__ == '__main__':
     print("Sending messages")
 
-    # email_message = {
-    #     "recipient": "emaildeteste@gmail.com",
-    #     "client": "Matheus",
-    #     "date": "16/02/2024",
-    #     "vehicle": "Ford K, 2003",
-    #     "branch": "Parque Nacional da Tijuca, Alto da Boa Vista, Rio de Janeiro/RJ",
-    #     "subject": "appointment"
-    #     }
-    # send_message(email_message, 'email_queue')
-    #
-    # email_message = {
-    #     "recipient": "emaildeteste@gmail.com",
-    #     "client": "Matheus",
-    #     "start_date": "21/01/2024",
-    #     "end_date": "04/02/2024",
-    #     "vehicle": "Ford K, 2003",
-    #     "branch": "Parque Nacional da Tijuca, Alto da Boa Vista, Rio de Janeiro/RJ",
-    #     "subject": "devolution"
-    #     }
-    # send_message(email_message, 'email_queue')
-    #
-    # email_message = {
-    #     "recipient": "emaildeteste@gmail.com",
-    #     "client": "Matheus",
-    #     "start_date": "21/01/2024",
-    #     "end_date": "04/02/2024",
-    #     "vehicle": "Ford K, 2003",
-    #     "subject": "late devolution"
-    #     }
-    # send_message(email_message, 'email_queue')
+    email_message = {
+        "recipient": "emaildeteste@gmail.com",
+        "client": "Matheus",
+        "date": "16/02/2024",
+        "vehicle": "Ford K, 2003",
+        "branch": "Parque Nacional da Tijuca, Alto da Boa Vista, Rio de Janeiro/RJ",
+        "subject": "appointment"
+        }
+    send_message(email_message, 'email_queue')
+
+    email_message = {
+        "recipient": "emaildeteste@gmail.com",
+        "client": "Matheus",
+        "start_date": "21/01/2024",
+        "end_date": "04/02/2024",
+        "vehicle": "Ford K, 2003",
+        "branch": "Parque Nacional da Tijuca, Alto da Boa Vista, Rio de Janeiro/RJ",
+        "subject": "devolution"
+        }
+    send_message(email_message, 'email_queue')
+
+    email_message = {
+        "recipient": "emaildeteste@gmail.com",
+        "client": "Matheus",
+        "start_date": "21/01/2024",
+        "end_date": "04/02/2024",
+        "vehicle": "Ford K, 2003",
+        "subject": "late devolution"
+        }
+    send_message(email_message, 'email_queue')
 
     whatsapp_message = {
-        "recipient": "+55 19 12345-6789",
+        "recipient": "+55 01 12345-6789",
         "client": "Matheus",
         "date": "21/01/2024",
         "vehicle": "Ford K, 2003",
         "subject": "appointment"
+    }
+    send_message(whatsapp_message, 'whatsapp_queue')
+
+    whatsapp_message = {
+        "recipient": "+55 01 12345-6789",
+        "client": "Matheus",
+        "date": "21/02/2024",
+        "vehicle": "Ford K, 2003",
+        "subject": "devolution"
+    }
+    send_message(whatsapp_message, 'whatsapp_queue')
+
+    whatsapp_message = {
+        "recipient": "+55 01 12345-6789",
+        "client": "Matheus",
+        "vehicle": "Ford K, 2003",
+        "subject": "late_devolution"
     }
     send_message(whatsapp_message, 'whatsapp_queue')

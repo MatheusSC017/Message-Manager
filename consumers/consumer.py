@@ -1,11 +1,24 @@
 import pika
 import json
+import logging
 from utils.messages import send_whatsapp_message, send_email
 
 
+logging.basicConfig(
+    filename='message.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
+
 def email_callback(ch, method, properties, body):
+    logger = logging.getLogger(__name__)
+
     message = json.loads(body)
-    send_email(message['recipient'], message['content'])
+    if message['subject'] in ['appointment', 'devolution', 'invoice', 'advertisement']:
+        send_email(**message)
+        logger.info(message)
+
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
 

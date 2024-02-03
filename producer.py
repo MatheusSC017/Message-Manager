@@ -19,7 +19,8 @@ if __name__ == '__main__':
     #     "date": "16/02/2024",
     #     "vehicle": "Ford K, 2003",
     #     "branch": "Parque Nacional da Tijuca, Alto da Boa Vista, Rio de Janeiro/RJ",
-    #     "subject": "appointment"}
+    #     "subject": "appointment"
+    #     }
     # send_message(email_message, 'email_queue')
     #
     # email_message = {
@@ -29,7 +30,8 @@ if __name__ == '__main__':
     #     "end_date": "04/02/2024",
     #     "vehicle": "Ford K, 2003",
     #     "branch": "Parque Nacional da Tijuca, Alto da Boa Vista, Rio de Janeiro/RJ",
-    #     "subject": "devolution"}
+    #     "subject": "devolution"
+    #     }
     # send_message(email_message, 'email_queue')
     #
     # email_message = {
@@ -38,8 +40,15 @@ if __name__ == '__main__':
     #     "start_date": "21/01/2024",
     #     "end_date": "04/02/2024",
     #     "vehicle": "Ford K, 2003",
-    #     "subject": "late devolution"}
+    #     "subject": "late devolution"
+    #     }
     # send_message(email_message, 'email_queue')
 
-    whatsapp_message = {"recipient": "+55 19 12545-4584", "content": "Hello via WhatsApp!"}
+    whatsapp_message = {
+        "recipient": "+55 19 12345-6789",
+        "client": "Matheus",
+        "date": "21/01/2024",
+        "vehicle": "Ford K, 2003",
+        "subject": "appointment"
+    }
     send_message(whatsapp_message, 'whatsapp_queue')

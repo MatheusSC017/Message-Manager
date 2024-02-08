@@ -11,61 +11,31 @@ def send_message(message, queue_name):
 
 
 if __name__ == '__main__':
-    print("Sending messages")
+    """
+    Below is the list of fields for requesting messages via email.
+    
+    appointment:
+        ["recipient", "client", "date", "vehicle", "branch", "subject", ]
+    devolution:
+        ["recipient", "client", "start_date", "end_date", "vehicle", "branch", "subject", ]
+    late devolution:
+        ["recipient", "client", "start_date", "end_date", "vehicle", "subject", ]
+        
+    Below is the list of fields for requesting messages via Whatsapp.
+    
+    appointment:
+        ["recipient", "client", "date", "vehicle", "subject", ]
+    devolution:
+        ["recipient", "client", "date", "vehicle", "subject", ]
+    late devolution:
+        ["recipient", "client", "vehicle", "subject", ]
+    """
+    print("Sending test messages")
 
-    email_message = {
-        "recipient": "matheussimao2101@gmail.com",
-        "client": "Matheus",
-        "date": "16/02/2024",
-        "vehicle": "Ford K, 2003",
-        "branch": "Parque Nacional da Tijuca, Alto da Boa Vista, Rio de Janeiro/RJ",
-        "subject": "appointment"
-        }
-    send_message(email_message, 'email_queue')
+    email_messages_json = open('email_messages.json')
+    for email in json.load(email_messages_json):
+        send_message(email, 'email_queue')
 
-    email_message = {
-        "recipient": "matheussimao2101@gmail.com",
-        "client": "Matheus",
-        "start_date": "21/01/2024",
-        "end_date": "04/02/2024",
-        "vehicle": "Ford K, 2003",
-        "branch": "Parque Nacional da Tijuca, Alto da Boa Vista, Rio de Janeiro/RJ",
-        "subject": "devolution"
-        }
-    send_message(email_message, 'email_queue')
-
-    email_message = {
-        "recipient": "matheussimao2101@gmail.com",
-        "client": "Matheus",
-        "start_date": "21/01/2024",
-        "end_date": "04/02/2024",
-        "vehicle": "Ford K, 2003",
-        "subject": "late devolution"
-        }
-    send_message(email_message, 'email_queue')
-
-    # whatsapp_message = {
-    #     "recipient": "+55 01 12345-6789",
-    #     "client": "Matheus",
-    #     "date": "21/01/2024",
-    #     "vehicle": "Ford K, 2003",
-    #     "subject": "appointment"
-    # }
-    # send_message(whatsapp_message, 'whatsapp_queue')
-    #
-    # whatsapp_message = {
-    #     "recipient": "+55 01 12345-6789",
-    #     "client": "Matheus",
-    #     "date": "21/02/2024",
-    #     "vehicle": "Ford K, 2003",
-    #     "subject": "devolution"
-    # }
-    # send_message(whatsapp_message, 'whatsapp_queue')
-    #
-    # whatsapp_message = {
-    #     "recipient": "+55 01 12345-6789",
-    #     "client": "Matheus",
-    #     "vehicle": "Ford K, 2003",
-    #     "subject": "late_devolution"
-    # }
-    # send_message(whatsapp_message, 'whatsapp_queue')
+    whatsapp_messages_json = open('whatsapp_messages.json')
+    for whatsapp in json.load(whatsapp_messages_json):
+        send_message(whatsapp, 'whatsapp_queue')

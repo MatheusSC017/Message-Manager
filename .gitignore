@@ -160,3 +160,5 @@ cython_debug/
 .idea/
 
 consumers/PyWhatKit_DB.txt
+email_messages.json
+whatsapp_messages.json

@@ -7,7 +7,7 @@ from email.mime.text import MIMEText
 from dotenv import load_dotenv
 
 BASE_DIR = pathlib.Path(__file__).resolve().parent.parent
-template_env = Environment(loader=FileSystemLoader(searchpath="../templates"))
+template_env = Environment(loader=FileSystemLoader(searchpath="consumers/templates"))
 load_dotenv()
 
 

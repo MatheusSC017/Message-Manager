@@ -19,7 +19,7 @@ But if you use Linux OS or MAC use the command below
 5. Install the libraries saved in the requirements.txt file, if you are using the PIP package manager you can use the following command
 > pip install -r requirements.txt
 
-6. Create the .env file with the next parameters
+6. Create the .env file with the next parameters, regarding the email password, read [Google's documentation](https://support.google.com/mail/answer/185833?hl=en) on how to create an application password.
 ```
 PORT=465
 PASSWORD=insert_the_password_app

@@ -4,6 +4,8 @@ This project aims to create a messaging system to manage messages sent via email
 
 **Note**: The project was based on the premise of being used in another project on my GitHub, this being a vehicle API, so the messages and subjects are configured as such.
 
+## [Video about the project in PT-BR](https://share.vidyard.com/watch/YzRf1mSsK6e97Ddvq7iPs1?)
+
 ## Installation
 1. Clone the repository on your device
 2. Go to the project directory

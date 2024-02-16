@@ -26,12 +26,25 @@ def send_email_message():
             send_message(message, 'email_queue')
 
 
+def send_whatsapp_message():
+    response = requests.get('http://127.0.0.1:5000/whatsapp/')
+    messages = json.loads(response.content)
+    if len(messages):
+        for message in messages:
+            send_message(message, 'whatsapp_queue')
+
+
 with DAG(dag_id="messages",
          start_date=datetime.today(),
-         schedule_interval="@hourly",
+         schedule_interval="@daily",
          catchup=False) as dag:
 
     email_task = PythonOperator(
         task_id="send_email_message",
         python_callable=send_email_message
+    )
+
+    whatsapp_task = PythonOperator(
+        task_id="send_whatsapp_message",
+        python_callable=send_whatsapp_message
     )

@@ -6,6 +6,19 @@ This project aims to create a messaging system to manage messages sent via email
 
 ## [Video about the project in PT-BR](https://share.vidyard.com/watch/YzRf1mSsK6e97Ddvq7iPs1?)
 
+## Structure
+### Consumers
+This folder contains the files to start consumer queues for email and Whatsapp
+
+### dags
+This is the Dag file used to create a scheduled function using Airflow to supply the queues by calling an API
+
+### testapi
+Testing API to test the use of the DAG
+
+### producer
+File to test consumers if you don't want to use the DAG, you can send messages directly from this file and check the consumers' operation without initializing the DAGs or TestApi
+
 ## Installation
 1. Clone the repository on your device
 2. Go to the project directory

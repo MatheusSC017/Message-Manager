@@ -42,5 +42,5 @@ EMAIL=insert_your_email@email.com
 ```
 
 7. Run as many instances as you want of the WhatsApp email consumer
-> python consumers/email_consumer.py
-> python consumers/whatsapp_consumer.py
+> python consumers/consumer.py 'e-mail' 'email_queue' 'appointment;devolution;late devolution;invoice'
+> python consumers/consumer.py 'whatsapp' 'whatsapp_queue' 'appointment;devolution;late devolution;invoice'

@@ -1,5 +1,7 @@
 # Message-Manager
 
+![Diagram](documentation/diagram.png)
+
 This project aims to create a messaging system to manage messages sent via email and WhatsApp, working on them in an asynchronous and scalable way. It also has the functionality to save logs and send personalized messages for each type of subject.
 
 **Note**: The templates, producer file and example of use in the Readme file in this project were based on the premise of being used in another project on my GitHub, this being a vehicle API, therefore the messages and subjects are configured as such . To use for personal purposes you need to create your own templates which will have the same names as the subjects you define on the command line to start the consumer

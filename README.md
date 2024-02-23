@@ -1,5 +1,9 @@
 # Message-Manager
 
+![Numero de lingaugens usadas](https://img.shields.io/github/languages/count/MatheusSC017/Message-Manager)
+![Lincense](https://img.shields.io/github/license/MatheusSC017/Message-Manager)
+![Tamanho do projeto](https://img.shields.io/github/languages/code-size/MatheusSC017/Message-Manager)
+
 ![Diagram](documentation/diagram.png)
 
 This project aims to create a messaging system to manage messages sent via email and WhatsApp, working on them in an asynchronous and scalable way. It also has the functionality to save logs and send personalized messages for each type of subject.

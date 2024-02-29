@@ -50,6 +50,7 @@ EMAIL=insert_your_email@email.com
 
 8. Run as many instances as you want of the WhatsApp email consumer,If you replace the templates in step 7 you need to replace the third parameter that represents the subjects with the set of names of your templates separated by ";"
 > python consumers/consumer.py 'e-mail' 'email_queue' 'appointment;devolution;late devolution;invoice'
+
 > python consumers/consumer.py 'whatsapp' 'whatsapp_queue' 'appointment;devolution;late devolution;invoice'
 
 ## Optional Usage

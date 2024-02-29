@@ -4,6 +4,7 @@ from datetime import datetime
 import pika
 import json
 import requests
+from setup import *
 
 
 def send_message(message, queue_name):
@@ -19,7 +20,7 @@ def send_message(message, queue_name):
 
 
 def send_email_message():
-    response = requests.get('http://127.0.0.1:5000/email/')
+    response = requests.get(API_URL)
     messages = json.loads(response.content)
     if len(messages):
         for message in messages:
